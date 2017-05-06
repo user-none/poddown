@@ -1,0 +1,15 @@
+<casts>
+    <cast>
+        <name>Security Now</name>
+        <category>Security</category>
+        <url>http://feeds.twit.tv/sn.xml</url>
+        <explicit>false</explicit>
+    </cast>
+    <cast>
+        <name>This Week in Tech</name>
+        <url>http://feeds.twit.tv/twit.xml</url>
+    </cast>
+    <cast>
+        <url>http://feeds.twit.tv/tnss_video_hd.xml</url>
+    </cast>
+</casts>

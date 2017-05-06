@@ -1,0 +1,40 @@
+<poddown>
+    <!-- Location should be absolute paths. -->
+    <location>
+        <!-- Directory to download episodes to. -->
+        <cast_dir>/Users/john/Downloads/casts</cast_dir>
+        <!-- Podcast XML with list of feeds to check. -->
+        <cast_list>/Users/john//Library/Application Support/poddown/casts.xml</cast_list>
+    </location>
+    <download>
+        <!-- Number of recent episodes to download.
+             Default 0 = download all recent. -->
+        <recent>0</recent>
+        <!-- Do not check when a feed was last modified to
+             determine if it should be downloaded and checked for updates.
+             Default false = use last modified date/time as returned by the web
+             server. -->
+        <ignore_last_modified>false</ignore_last_modified>
+        <!-- Keep partial downloads when an episode could not be
+             fully downloaded. Partial downloads will be resumed if possible.
+             Default true = Don't delete episodes on download error. -->
+        <keep_partial>true</keep_partial>
+        <!-- Allow downloading explicit episodes.
+             Default true = download episodes regardless of explicit
+             status. If false will only download episodes specifically
+             marked as clean. -->
+        <allow_explicit>true</allow_explicit>
+    </download>
+    <tuning>
+        <!-- The number of threads to use for downloading and parsing feeds.
+             Default 0 = (Number of CPU cores / 2) + 1 -->
+        <feed_threads>0</feed_threads>
+        <!-- The number of threads to use for downloading episodes.
+             Default 0 = Number of CPU cores + 1 -->
+        <download_threads>0</download_threads>
+        <!-- Update the last download time on error.
+             Default true = Always update the last download time after
+             running. -->
+        <update_lastdl_on_error>true</update_lastdl_on_error>
+    </tuning>
+</poddown>

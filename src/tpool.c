@@ -199,6 +199,7 @@ void tpool_destroy(tpool_t *tp)
         tpool_work_destroy(work);
         work = work2;
     }
+    tp->work_first = NULL;
     /* Tell the worker threads to stop. */
     tp->stop = true;
     pthread_cond_broadcast(&(tp->work_cond));
@@ -252,7 +253,7 @@ void tpool_wait(tpool_t *tp)
         /* working_cond is dual use. It signals when we're not stopping but the
          * working_cnt is 0 indicating there isn't any work processing. If we
          * are stopping it will trigger when there aren't any threads running. */
-        if ((!tp->stop && tp->working_cnt != 0) || (tp->stop && tp->thread_cnt != 0)) {
+        if (tp->work_first != NULL || (!tp->stop && tp->working_cnt != 0) || (tp->stop && tp->thread_cnt != 0)) {
             pthread_cond_wait(&(tp->working_cond), &(tp->work_mutex));
         } else {
             break;
